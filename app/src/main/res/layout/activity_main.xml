@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_set"
+    tools:context=".main.MainActivity">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:text="@string/app_name"
+        android:textColor="#FF0A100F"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/img_setting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:src="@drawable/ic_setting"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/img_yuan_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_yuan"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <ImageView
+        android:id="@+id/img_yuan_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_yuan_b"
+        app:layout_constraintBottom_toBottomOf="@+id/img_yuan_1"
+        app:layout_constraintEnd_toEndOf="@+id/img_yuan_1"
+        app:layout_constraintStart_toStartOf="@+id/img_yuan_1"
+        app:layout_constraintTop_toTopOf="@+id/img_yuan_1" />
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/pc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:indicatorColor="#69C2F3"
+        app:indicatorInset="0dp"
+        app:indicatorSize="170dp"
+        app:layout_constraintBottom_toBottomOf="@+id/img_yuan_2"
+        app:layout_constraintEnd_toEndOf="@+id/img_yuan_2"
+        app:layout_constraintStart_toStartOf="@+id/img_yuan_2"
+        app:layout_constraintTop_toTopOf="@+id/img_yuan_2"
+        app:trackColor="#D5E3E9"
+        app:trackThickness="5dp"
+        tools:progress="50" />
+
+    <TextView
+        android:id="@+id/tv_progress_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textColor="#0A0C10"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="@+id/img_yuan_2"
+        app:layout_constraintEnd_toEndOf="@+id/img_yuan_2"
+        app:layout_constraintStart_toStartOf="@+id/img_yuan_2"
+        app:layout_constraintTop_toTopOf="@+id/img_yuan_2" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="%"
+        android:textColor="#0A0C10"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_progress_num"
+        app:layout_constraintStart_toEndOf="@+id/tv_progress_num" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="In Progress"
+        android:textColor="#FF889EB4"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/textView3"
+        app:layout_constraintStart_toStartOf="@+id/tv_progress_num"
+        app:layout_constraintTop_toBottomOf="@+id/tv_progress_num" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="23dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/img_yuan_1">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_free_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="#FF0A0E10"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_free_un"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="GB"
+                    android:textColor="#FF0A0E10"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="28dp"
+                android:layout_height="16dp"
+                android:layout_marginTop="4dp"
+                android:text="Free"
+                android:textColor="#FF728791"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="30dp"
+            android:background="#CCCCCC" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_user_num"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="0"
+                    android:textColor="#FF0A0E10"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_user_un"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="GB"
+                    android:textColor="#FF0A0E10"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="28dp"
+                android:layout_height="16dp"
+                android:layout_marginTop="4dp"
+                android:text="User"
+                android:textColor="#FF728791"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_clean"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_clean"
+        android:drawableEnd="@drawable/ic_go"
+        android:drawablePadding="4dp"
+        android:gravity="center"
+        android:paddingHorizontal="71dp"
+        android:paddingVertical="16dp"
+        android:text="Clean"
+        android:textColor="#FFF8FBFF"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bg_main_bottom"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_clean">
+
+        <LinearLayout
+            android:id="@+id/ll_picture"
+            android:layout_width="146dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_picture"
+            android:orientation="vertical"
+            android:padding="24dp"
+            app:layout_constraintEnd_toStartOf="@+id/ll_file"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_picture_clean" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:drawableTintMode="add"
+                android:gravity="start"
+                android:text="Picture Clean"
+                android:textColor="#FFE98736"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_file"
+            android:layout_width="146dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_file"
+            android:orientation="vertical"
+            android:padding="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ll_picture"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_file_clean" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:drawableTintMode="add"
+                android:gravity="start"
+                android:text="File Clean"
+                android:textColor="#FF2C9BEC"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#99000000"
+        android:gravity="center"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="44dp"
+            android:paddingBottom="24dp"
+            android:paddingHorizontal="21dp"
+            android:background="@drawable/bg_dialog"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_dialog_logo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:text="Authorization to find more junk files"
+                android:textColor="#FF0A0C10"
+                android:textSize="14sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:gravity="center">
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/tv_cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cancel"
+                    android:textColor="#FFBCBCBC"
+                    android:textSize="12sp"
+                    app:cornerRadius="18dp"
+                    app:backgroundTint="#F5F5F5"/>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/tv_yes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Agree"
+                    android:layout_marginStart="32dp"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    app:cornerRadius="18dp"
+                    app:backgroundTint="#20C0FD"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
